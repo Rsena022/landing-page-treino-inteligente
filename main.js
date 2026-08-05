@@ -82,15 +82,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 4. DEMO VSL VIDEO SIMULATOR CLICK
-    const vslTrigger = document.getElementById('vsl-trigger');
-    if (vslTrigger) {
-        vslTrigger.addEventListener('click', () => {
-            const overlay = vslTrigger.querySelector('.vsl-overlay');
-            if (overlay) {
-                overlay.style.opacity = '0';
-                overlay.style.pointerEvents = 'none';
-            }
+    // 4. VSL VIDEO PLAYER LOGIC (CONTROLE DE REPRODUÇÃO & OVERLAY)
+    const vslPlayer = document.getElementById('vsl-player');
+    const vslOverlay = document.getElementById('vsl-overlay');
+
+    if (vslPlayer && vslOverlay) {
+        // Ao clicar no overlay, oculta a camada e dá play no vídeo
+        vslOverlay.addEventListener('click', () => {
+            vslOverlay.style.opacity = '0';
+            vslOverlay.style.pointerEvents = 'none';
+            vslPlayer.play().catch(err => console.log('Autoplay bloqueado pelo navegador:', err));
+        });
+
+        // Quando o vídeo começa a tocar
+        vslPlayer.addEventListener('play', () => {
+            vslOverlay.style.opacity = '0';
+            vslOverlay.style.pointerEvents = 'none';
+        });
+
+        // Quando o vídeo termina
+        vslPlayer.addEventListener('ended', () => {
+            vslOverlay.style.opacity = '1';
+            vslOverlay.style.pointerEvents = 'auto';
         });
     }
 

@@ -518,6 +518,7 @@ nav.scrolled {
     gap: 16px;
     padding: 24px;
     text-align: center;
+    transition: opacity 0.4s ease;
 }
 
 .play-btn-pulse {

@@ -75,10 +75,29 @@
                 Acesse a biblioteca definitiva com <strong>+500 treinos funcionais em vídeo</strong>, organizados passo a passo para as <strong>4 primeiras semanas</strong> + <strong>3 Bônus PDF Inclusos</strong>. Sem mensalidades, sem equipamentos e no seu ritmo.
             </p>
 
-            <!-- PRODUCT INFORMATIVE SHOWCASE BANNER -->
+            <!-- VSL VIDEO PLAYER SECTION (ALTA CONVERSÃO) -->
             <div class="vsl-showcase-box">
-                <div class="vsl-img-container" style="position: relative; width: 100%; border-radius: 18px; overflow: hidden; border: 1.5px solid rgba(0, 240, 255, 0.4); box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 0 35px rgba(0,240,255,0.2);">
-                    <img src="vsl_showcase.png" alt="Demonstração do Pack Treino Inteligente" style="width: 100%; height: auto; display: block; object-fit: cover;">
+                <div class="vsl-video-wrapper" id="vsl-video-container">
+                    <div class="vsl-overlay" id="vsl-overlay">
+                        <div class="play-btn-pulse">
+                            <svg width="34" height="34" viewBox="0 0 24 24" fill="currentColor" style="margin-left: 4px;">
+                                <polygon points="5 3 19 12 5 21 5 3"/>
+                            </svg>
+                        </div>
+                        <div class="vsl-caption">
+                            <strong>CLIQUE PARA ASSISTIR À APRESENTAÇÃO COMPLETA</strong>
+                            <span>Veja como funciona a biblioteca de +500 treinos guiados</span>
+                        </div>
+                    </div>
+                    <video id="vsl-player" 
+                           poster="vsl_showcase.png" 
+                           preload="metadata" 
+                           playsinline 
+                           controls
+                           style="width: 100%; height: auto; display: block; border-radius: 16px;">
+                        <source src="vsl_treino_inteligente.mp4" type="video/mp4">
+                        Seu navegador não suporta a reprodução de vídeo HTML5.
+                    </video>
                 </div>
             </div>
 
